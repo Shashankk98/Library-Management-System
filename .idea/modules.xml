@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/library-api-gateway/library-api-gateway.iml" filepath="$PROJECT_DIR$/library-api-gateway/library-api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-book-service/library-book-service.iml" filepath="$PROJECT_DIR$/library-book-service/library-book-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-borrowing-service/library-borrowing-service.iml" filepath="$PROJECT_DIR$/library-borrowing-service/library-borrowing-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-notification-service/library-notification-service.iml" filepath="$PROJECT_DIR$/library-notification-service/library-notification-service.iml" />
+    </modules>
+  </component>
+</project>
