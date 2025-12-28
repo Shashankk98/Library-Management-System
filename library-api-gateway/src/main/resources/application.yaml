@@ -13,28 +13,28 @@ spring:
           predicates:
             - Path=/users/**
           filters:
-            - StripPrefix=0
+            - RewritePath=/users/(?<segment>.*), /users/$\{segment}
 
         - id: book-service
           uri: lb://library-book-service
           predicates:
             - Path=/books/**
           filters:
-            - StripPrefix=0
+            - RewritePath=/books/(?<segment>.*), /books/$\{segment}
 
         - id: borrowing-service
           uri: lb://library-borrowing-service
           predicates:
             - Path=/borrowings/**
           filters:
-            - StripPrefix=0
+            - RewritePath=/borrowings/(?<segment>.*), /borrowings/$\{segment}
 
         - id: notification-service
           uri: lb://library-notification-service
           predicates:
             - Path=/notifications/**
           filters:
-            - StripPrefix=0
+            - RewritePath=/notifications/(?<segment>.*), /notifications/$\{segment}
 
 server:
   port: 8080
