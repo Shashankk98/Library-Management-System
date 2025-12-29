@@ -8,33 +8,33 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: user-service
-          uri: lb://library-user-service
+        - id: library-user-service
+          uri: lb://LIBRARY-USER-SERVICE
           predicates:
-            - Path=/users/**
+            - Path=/users/**,/auth/**
           filters:
-            - RewritePath=/users/(?<segment>.*), /users/$\{segment}
+            - RewritePath=/users/(?<segment>.*), /users/${segment}
 
         - id: book-service
           uri: lb://library-book-service
           predicates:
             - Path=/books/**
           filters:
-            - RewritePath=/books/(?<segment>.*), /books/$\{segment}
+            - RewritePath=/books/(?<segment>.*), /books/${segment}
 
         - id: borrowing-service
           uri: lb://library-borrowing-service
           predicates:
             - Path=/borrowings/**
           filters:
-            - RewritePath=/borrowings/(?<segment>.*), /borrowings/$\{segment}
+            - RewritePath=/borrowings/(?<segment>.*), /borrowings/${segment}
 
         - id: notification-service
           uri: lb://library-notification-service
           predicates:
             - Path=/notifications/**
           filters:
-            - RewritePath=/notifications/(?<segment>.*), /notifications/$\{segment}
+            - RewritePath=/notifications/(?<segment>.*), /notifications/${segment}
 
 server:
   port: 8080
